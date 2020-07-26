@@ -29,6 +29,8 @@ If you'd like to skip all the read, just visit the demo [here](https://eggsy.js.
     - Note: You can delete `static/CNAME` if you are not going to use a custom domain alongside GitHub Pages.
 - 🔥 Now you can upload your `dist` folder to anywhere and host it!
 
+### Preview
+
 ![demo-gif](./images/demo.gif)
 
 ### Thank You
