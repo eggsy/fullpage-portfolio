@@ -1,5 +1,5 @@
 <template>
-  <div v-fullpage="{ start: 0, dir: 'v' }" ref="page">
+  <full-page :options="{ sectionSelector: '.container' }" ref="fullPage">
     <div class="container">
       <div class="text-gray-700 text-center">
         <div class="bg-white p-6">
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="select-none bottom-text text-center text-gray-700" @click="$refs.page.$fullpage.moveNext()">
+      <div class="select-none bottom-text text-center text-gray-700" @click="moveDown">
         <span>scroll down</span>
       </div>
     </div>
@@ -31,7 +31,7 @@
         </p>
       </div>
 
-      <div class="select-none bottom-text text-center text-gray-700" @click="$refs.page.$fullpage.moveNext()">
+      <div class="select-none bottom-text text-center text-gray-700" @click="moveDown">
         <span>scroll down</span>
       </div>
     </div>
@@ -49,7 +49,7 @@
         <Skills />
       </div>
 
-      <div class="select-none bottom-text text-center text-gray-700" @click="$refs.page.$fullpage.moveNext()">
+      <div class="select-none bottom-text text-center text-gray-700" @click="moveDown">
         <span>scroll down</span>
       </div>
     </div>
@@ -64,11 +64,11 @@
         </p>
       </div>
 
-      <div class="select-none bottom-text text-center text-gray-700" @click="$refs.page.$fullpage.moveTo(0, true)">
+      <div class="select-none bottom-text text-center text-gray-700" @click="goTop">
         <span>go back to top</span>
       </div>
     </div>
-  </div>
+  </full-page>
 </template>
 
 <style>
@@ -115,7 +115,7 @@
 
   @media only screen and (max-width: 1024px) {
     .container {
-      padding: 2em;
+      padding: 0 2em;
     }
 
     .flex.mt-4 {
@@ -164,11 +164,20 @@
     },
     mounted() {
       document.addEventListener("keydown", (key) => {
-        if (key.code === "ArrowDown") return this.$refs.page.$fullpage.moveNext();
-        else if (key.code === "ArrowUp") return this.$refs.page.$fullpage.moveTo(this.$refs.page.$fullpage.prevIndex, true);
+        if (key.code === "ArrowDown") return this.moveDown();
+        else if (key.code === "ArrowUp") return this.moveUp();
       });
     },
     methods: {
+      moveDown() {
+        this.$refs.fullPage.api.moveSectionDown();
+      },
+      moveUp() {
+        this.$refs.fullPage.api.moveSectionUp();
+      },
+      goTop() {
+        this.$refs.fullPage.api.moveTo(1);
+      },
       randomRank() {
         this.rank = this.ranks.filter(r => r !== this.rank)[Math.floor(Math.random() * (this.ranks.length - 1))];
       }

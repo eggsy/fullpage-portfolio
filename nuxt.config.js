@@ -29,6 +29,6 @@ export default {
   css: [],
   plugins: [],
   components: true,
-  modules: ["fullpage-nuxt"],
+  modules: ["nuxt-fullpage.js"],
   build: {}
 };
