@@ -2,7 +2,7 @@
   <div class="text-gray-700">
     <div class="flex justify-center">
       <a v-for="(social, index) in socials" :key="index" :href="social.url" target="_blank">
-        <img alt="icon" :src="social.icon" />
+        <img alt="icon" class="icon" :src="social.icon" />
       </a>
     </div>
   </div>

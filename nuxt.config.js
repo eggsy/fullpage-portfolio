@@ -30,5 +30,6 @@ export default {
   plugins: [],
   components: true,
   modules: ["nuxt-fullpage.js"],
+  buildModules: ["@nuxtjs/color-mode"],
   build: {}
 };

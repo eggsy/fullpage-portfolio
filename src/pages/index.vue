@@ -2,14 +2,14 @@
   <full-page :options="{ sectionSelector: '.container' }" ref="fullPage">
     <div class="container">
       <div class="text-gray-700 text-center">
-        <div class="bg-white p-6">
-          <img class="avatar h-32 w-32 mx-auto mb-2" draggable="false" src="/images/me2019.jpeg"
+        <div class="p-6">
+          <img class="avatar w-32 h-32 mx-auto mb-2" draggable="false" src="/images/me2019.jpeg"
                alt="irl-image">
 
           <div class="text-center">
             <h2 class="text-lg">Abdulbaki "EGGSY" Dursun</h2>
             <div class="select-none cursor-pointer text-purple-500 mb-1" @click="randomRank">{{ rank }}</div>
-            <Socials />
+            <Socials class="socials" />
           </div>
         </div>
       </div>
@@ -162,18 +162,9 @@
         rank: "Full Stack Developer"
       };
     },
-    mounted() {
-      document.addEventListener("keydown", (key) => {
-        if (key.code === "ArrowDown") return this.moveDown();
-        else if (key.code === "ArrowUp") return this.moveUp();
-      });
-    },
     methods: {
       moveDown() {
         this.$refs.fullPage.api.moveSectionDown();
-      },
-      moveUp() {
-        this.$refs.fullPage.api.moveSectionUp();
       },
       goTop() {
         this.$refs.fullPage.api.moveTo(1);
