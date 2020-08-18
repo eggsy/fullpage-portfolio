@@ -32,11 +32,11 @@ export default {
     return {
       socials: [
         {
-          url: "https://github.com/eggsywashere/fullpage-portfolio",
+          url: "https://github.com/eggsydev/fullpage-portfolio",
           icon: require("../assets/icons/github.svg"),
         },
         {
-          url: "https://twitter.com/eggsywashere",
+          url: "https://twitter.com/eggsydev",
           icon: require("../assets/icons/twitter.svg"),
         },
         {

@@ -35,4 +35,4 @@ If you'd like to skip all the read, just visit the demo [here](https://eggsy.js.
 
 ### 🙏 Thank You
 
-If you liked this project, please check out my other projects from [my GitHub profile](https://github.com/eggsywashere) and don't forget to check [my personal website](https://eggsy.xyz) for more cool projects like this.
+If you liked this project, please check out my other projects from [my GitHub profile](https://github.com/eggsydev) and don't forget to check [my personal website](https://eggsy.xyz) for more cool projects like this.
